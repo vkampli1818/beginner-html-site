@@ -18,15 +18,16 @@ jobs:
 
     - name: Build
       run: |
-        echo "Building website"
+        echo "Building site"
         ls
 
     - name: Test
       run: |
         test -f index.html
 
-    - name: Deploy to GitHub Pages
+    - name: Deploy to gh-pages branch
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: .
+        publish_branch: gh-pages
